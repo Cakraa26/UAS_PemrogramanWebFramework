@@ -1,0 +1,52 @@
+{
+  "menu": [
+    {
+      "name": "Dashboard",
+      "icon": "menu-icon icon-base ri ri-home-smile-line",
+      "slug": "dashboard",
+      "url": "dashboard"
+    },
+    {
+      "menuHeader": "Master Data"
+    },
+    {
+      "url": "user",
+      "name": "User",
+      "icon": "menu-icon icon-base ri ri-user-3-line",
+      "slug": "user"
+    },
+    {
+      "url": "supplier",
+      "name": "Supplier",
+      "icon": "menu-icon icon-base ri ri-building-line",
+      "slug": "supplier"
+    },
+    {
+      "url": "konsumen",
+      "name": "Konsumen",
+      "icon": "menu-icon icon-base ri ri-briefcase-line",
+      "slug": "konsumen"
+    },
+    {
+      "url": "produk",
+      "name": "Produk",
+      "icon": "menu-icon icon-base ri ri-box-3-line",
+      "slug": "produk"
+    },
+    {
+      "menuHeader": "Transaksi"
+    },
+    {
+      "name": "Pembelian",
+      "icon": "menu-icon icon-base ri ri-shopping-cart-2-line",
+      "slug": "pembelian",
+      "url": "pembelian"
+    },
+    {
+      "name": "Penjualan",
+      "icon": "menu-icon icon-base ri ri-price-tag-3-line",
+      "slug": "penjualan",
+      "url": "penjualan"
+    }
+  ]
+}
