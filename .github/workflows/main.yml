@@ -7,17 +7,20 @@ jobs:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@main
+      - name: Get the latest code
+        uses: actions/checkout@master
+
+      - name: Configure PHP
+        uses: shivammathur/setup-php@master
+        with:
+          php-version: 8.2
+          extensions: mbstring, ctype, fileinfo, openssl, PDO, bcmath, json, tokenizer, xml, intl
 
       - name: Copy .env
-        run: cp .env.example .env
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
 
-      - name: Build dependencies
-        run: npm run build
-
-      - name: List output files
-        run: find ./dist/ -print
+      - name: Directory Permissions
+        run: chmod -R 777 storage bootstrap/cache
 
       - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@4.2.0
@@ -25,4 +28,3 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
